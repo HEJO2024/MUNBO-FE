@@ -1,0 +1,514 @@
+/* swal 창 */
+.swal2-popup {
+  font-size: 11px;
+  width: 400px; 
+  height: 300px;
+
+}
+/*header*/
+.Header{
+  display: flex;
+  border-bottom: 1px solid black;
+ 
+  height: 70px;
+}
+.HeaderItem1{
+  text-decoration: none;
+  width: 50px;
+  padding-top: 20px;
+  font-size: 20px;
+  color: black;
+}
+.HeaderItem2{
+ padding-left:760px;
+ padding-top: 20px;
+ font-size: 20px;
+}
+.HeaderItem3{
+  display: flex;
+  padding-left:0px;
+  padding-top: 20px;
+  font-size: 20px;
+ }
+ .HeaderItem4{
+  text-decoration: none;
+  color:black;
+  padding-top:10px;
+  font-size: 15px;
+  padding-left: 45px;
+ }
+ .HeaderItem5{
+  padding-top:7px;
+  font-size: 18px;
+  padding-left: 45px;
+  font-weight: bold;
+ }
+.HeaderLogo{
+  height: 40px;
+  padding-left:10px;
+  padding-right:10px;
+}
+/*home*/
+.AdminEntire{
+  padding-left: 80px;
+  padding-right: 190px;
+}
+.MainTitle{
+ padding-left: 300px;
+ padding-top:150px;
+ font-size: 25px;
+}
+.MainSub{
+  padding-left: 390px;
+  padding-top:40px;
+  font-size: 15px;
+
+ }
+.itemLogo{
+  vertical-align: middle;
+  padding-bottom: 20px;
+}
+.itemLogo1{
+  vertical-align: middle;
+  height: 60px;
+  width: 60px;
+  padding-bottom: 20px;
+}
+.MainMenu{
+  display: flex;
+}
+
+
+.item {
+  text-decoration: none;
+  color:black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  padding-left: 70px;
+  padding-top: 150px;
+}
+.item1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  padding-left: 70px;
+  padding-top: 140px;
+}
+/* login */
+.AdminLogin{
+  display: flex;
+  flex-direction: column;
+  padding-left: 80px;
+  padding-right: 190px;
+
+}
+.LoginText{
+  padding-top: 100px;
+  padding-left:370px;
+  padding-bottom: 20px;
+  font-size: 23px;
+} 
+.LoginInput{
+  margin-top: 3px;
+  margin-left: 370px;
+  width:200px;
+  height: 30px;
+  border-radius: 5px;
+}
+.LoginButton{
+  margin-left:370px;
+  margin-right:366px;
+  margin-top: 50px;
+  border: 1px solid black;
+  background-color: black;
+  color: white;
+  text-align: center;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 5px;
+
+}
+/*  userview  */
+.UserText{
+  font-size: 23px;
+  padding-left: 70px;
+  padding-top: 70px;
+}
+.UserAll{
+  padding-top: 50px;
+  padding-left: 70px;
+}
+.UserList{
+  display: flex;
+  
+}
+.UserMenuList{
+  display: flex;
+  background-color:#C8C8C8;
+ width: 549px;
+ height:50px;
+  
+}
+.UserItem1,.UserItem2,.UserItem3,.UserItem4,.UserItem5,.UserItem6{
+  
+  height:auto;
+  min-height:50px;
+ overflow: auto;
+  
+  border: 1px solid black;
+  text-align: center;
+  font-size: 13px;
+  display: flex;      
+  align-items: center;
+  justify-content: center; 
+  
+  
+}
+.UserItem1{
+  width:70px;
+}
+.UserItem2{
+  width:70px;
+}
+.UserItem3{
+  width:70px;
+}
+.UserItem4{
+  width:150px;
+}
+.UserItem5{
+  width:60px;
+}
+.UserItem6{
+  width:60px;
+  color:blue;
+  text-decoration: none;
+}
+/*  useredit */
+.UserEdit{
+  display: flex;
+  flex-direction: column;
+
+ padding-left: 100px;
+ padding-top: 40px;
+}
+.UserEditText{
+  padding-top: 70px;
+  padding-left: 100px;
+  font-size: 20px;
+}
+.UserEditButton{
+  display: flex;
+ padding-left: 230px;
+ padding-top: 30px;
+ height: 23px;
+}
+.UserEditId{
+  display: flex;
+  align-items: center; 
+}
+.UserEditButtonDetail1{
+    margin-left: 0px;
+    width: 50px;
+  border:1px solid black;
+  border-radius:5px;
+  background-color: black;
+  color:white;
+  font-size: 13px;
+ text-align: center;
+
+}
+.UserEditButtonDetail2{
+  margin-left: 5px;
+  width: 50px;
+border:1px solid black;
+border-radius:5px;
+background-color: rgb(69, 69, 210);
+color:white;
+font-size: 13px;
+text-align: center;
+}
+.UserEditInput{
+  height: 30px;
+  width: 230px;
+  margin-bottom: 10px;
+}
+.Duplication{
+  border: 1px solid black;
+  border-radius: 5px;
+  height: 23px;
+  margin-top:-10px;
+  margin-left:5px;
+  font-size: 13px;
+  background-color: black;
+  color: white;
+}
+/*  quiz     */
+.QuizAll{
+  padding-top: 50px;
+  padding-left: 70px;
+}
+.QuizList{
+  display: flex;
+  
+}
+.QuizMenuList{
+  display: flex;
+  background-color:#C8C8C8;
+ width: 456px;
+ height:40px;
+  
+}
+.QuizMenuItem1,.QuizMenuItem2,.QuizMenuItem3,.QuizMenuItem4{
+
+  overflow: auto;
+   border: 1px solid black;
+   text-align: center;
+   font-size: 13px;
+   display: flex;      
+   align-items: center;
+   justify-content: center; 
+
+}
+.QuizItem1,.QuizItem2,.QuizItem3,.QuizItem4{
+  
+  height:50px;
+ overflow: auto;
+  border: 1px solid black;
+  text-align: center;
+  font-size: 13px;
+  display: flex;      
+  align-items: center;
+  justify-content: center; 
+  padding-top:10px;
+  padding-bottom: 10px;
+  
+}
+.QuizItem1,.QuizMenuItem1{
+  width: 30px;
+}
+.QuizItem2,.QuizMenuItem2{
+  width:300px;
+}
+.QuizItem3{
+  width:60px;
+  color:blue;
+  text-decoration: none;
+}
+.QuizMenuItem3{
+  width:60px;
+}
+/* quizedit*/
+.QuizEditText{
+  font-size: 23px;
+  padding-left: 70px;
+  padding-top: 50px;
+
+}
+.QuizContent{
+  margin-top: 20px;
+  margin-left: 70px;
+  width: 550px;
+  height: 100px;
+  font-family: sans-serif;
+}
+.AnswAll{
+  margin-left: 70px;
+}
+.Answ{
+  display: flex;
+  margin-top: 10px;
+}
+.AnswKey{
+  border-radius: 100%; 
+  border: 1px solid black;
+  width: 30px;
+  display: flex;
+  justify-content: center; /* 가로 중앙 정렬 */
+  align-items: center; /* 세로 중앙 정렬 */
+
+}
+.AnswInput{
+  margin-left: 10px;
+  width:250px;
+  height: 30px;
+}
+.R_answ{
+  margin-left: 400px;
+  margin-top: -170px;
+  display: flex;
+}
+.R_answInput{
+  margin-left: 5px;
+  width: 10px;
+
+}
+.WrgAnsw{
+  margin-left: 400px;
+  margin-top: 10px;
+}
+.WrgAnswInput{
+  margin-top:5px;
+  width:210px;
+  height:100px;
+}
+.QuizButtonAll{
+  display: flex;
+}
+.QuizButton1{
+  margin-top: 55px;
+  margin-left: 300px;
+  border: 1px solid black;
+  border-radius:5px ;
+  width: 50px;
+  text-align: center;
+  color:white;
+  background-color: black;
+}
+.QuizButton2{
+  margin-top: 55px;
+  margin-left: 10px;
+  border-radius:5px ;
+  border: 1px solid black;
+  width: 50px;
+  text-align: center;
+  color:white;
+  background-color: black;
+}
+/*  contentselect  */
+.ContentAll{
+  display: flex;
+  margin-top:70px;
+  margin-left: 50px;
+}
+.ContentBox{
+ 
+  border: 1px solid black;
+  margin-left: 40px;
+  height: 300px;
+  width: 200px;
+}
+.ContentMain1 ,.ContentMain2 ,.ContentMain3{
+  display: flex;
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center; 
+  border-bottom: 1px solid black;
+  height: 70px;
+  width: 200px;
+}
+.ContentMain1{
+  background-color: rgba(7, 191, 38, 0.6);
+}
+.ContentMain2{
+  background-color: rgba(128, 128, 128, 0.519);
+}
+.ContentMain3{
+  background-color: rgba(255, 0, 0, 0.455);
+}
+.ContentDetail{
+  margin-top: 30px;
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  text-align: center;
+}
+.ContentLink{
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+}
+/* round && subject   */
+.RoundAll{
+  padding-top: 50px;
+  padding-left: 70px;
+}
+.RoundList{
+  display: flex;
+  
+}
+.RoundMenuList{
+  display: flex;
+  background-color:#C8C8C8;
+ width: 394px;
+ height:40px;
+  
+}
+.RoundMenuItem1,.RoundMenuItem2{
+
+  overflow: auto;
+   border: 1px solid black;
+   text-align: center;
+   font-size: 13px;
+   display: flex;      
+   align-items: center;
+   justify-content: center; 
+
+}
+.RoundItem1,.RoundItem2{
+  
+  height:30px;
+ overflow: auto;
+  border: 1px solid black;
+  text-align: center;
+  font-size: 13px;
+  display: flex;      
+  align-items: center;
+  justify-content: center; 
+  padding-top:10px;
+  padding-bottom: 10px;
+  
+}
+.RoundItem1,.RoundMenuItem1{
+  width: 250px;
+}
+
+.RoundItem2{
+  width:70px;
+  color:blue;
+  text-decoration: none;
+}
+.RoundMenuItem2{
+  width:70px;
+}
+.RoundCreate{
+  border: 1px solid black;
+  border-radius: 5px;
+  width:50px;
+  font-size: 14px;
+  margin-left: 410px;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  background-color:rgba(0, 0, 255, 0.315);
+}
+/* round && subject create  */
+
+.RoundCreateBox{
+  height: 30px;
+  margin-left:70px;
+  margin-top: 30px;
+  width: 250px;
+  border-radius: 10px;
+}
+.RoundCreateButton{
+  border: 1px solid black;
+  border-radius: 5px;
+  width:50px;
+  margin-left: 10px;
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  background-color: black;
+  color: white;
+}
+.RoundCreateButtonList{
+  display: flex;
+  margin-left: 200px;
+  margin-top: 10px;
+}
