@@ -2,10 +2,11 @@ import { useEffect, useState } from "react";
 import AdminHeader from "../../components/AdminHeader";
 import axios from "axios";
 import AdminButton from "../../components/AdminButton";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Swal from 'sweetalert2';
 const QuizView=()=>{
     const [quiz,setQuiz]=useState([]);
+    const navigate=useNavigate();
     useEffect(() => {
         fetchuserData();
      }, []); //가져온 문제데이터 실행
@@ -13,13 +14,18 @@ const QuizView=()=>{
      
        const fetchuserData = async () => {     
          try {
-             const response = await axios.get(`${process.env.REACT_APP_API_URL}/admin/quiz/view`);
+             const response = await axios.get(`/admin/quiz/view`);
              setQuiz(response.data);
 
          }catch (error) {
-        //  if(error.response.status===500){
-         //  alert(error.response.data.message);
+          if(error.response.status===500){
+          alert(error.response.data.message);
           }
+          else if(error.response.status===401 || error.response.status===403){
+            alert(error.response.data.message);
+            sessionStorage.removeItem("token");
+            navigate("/admin/login");
+           }}
          }  // api로 문제 정보 받아오는 함수
 
          const handleDelete=async(quizId)=>{
@@ -35,7 +41,7 @@ const QuizView=()=>{
         }).then((result) => { 
             if (result.isConfirmed) { //삭제하기 누르면
         
-              axios.post(`${process.env.REACT_APP_API_URL}/admin/quiz/delete`, {
+              axios.post(`/admin/quiz/delete`, {
                 quizId:quizId,
                 
              })
@@ -62,11 +68,15 @@ const QuizView=()=>{
                   'fail'
               );
               }
-              Swal.fire(
+              else if(error.response.status===401 || error.response.status===403){
+                sessionStorage.removeItem("token");
+               Swal.fire(
                 '삭제 실패!',
-                '해당 항목 삭제에 실패했습니다.',
-                'success'
-            );
+                error.response.data.message,
+                'fail'
+            ) ;
+             navigate('/admin/login')
+            };
                  window.location.reload();
              });
             }

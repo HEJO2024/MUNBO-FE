@@ -5,43 +5,64 @@
   height: 300px;
 
 }
+
+
+
 /*header*/
 .Header{
   display: flex;
   border-bottom: 1px solid black;
- 
+  width: 100%;
   height: 70px;
 }
 .HeaderItem1{
   text-decoration: none;
-  width: 50px;
+  width: 3%;
   padding-top: 20px;
   font-size: 20px;
   color: black;
+  white-space: nowrap;
 }
-.HeaderItem2{
- padding-left:760px;
- padding-top: 20px;
- font-size: 20px;
-}
-.HeaderItem3{
+.HeaderItem2 {
   display: flex;
-  padding-left:0px;
+ margin-left: 80%;
   padding-top: 20px;
   font-size: 20px;
+  white-space: nowrap; 
+}
+
+
+.HeaderItem3{
+  display: flex;
+  padding-left:5%;
+  padding-top: 20px;
+  width: 100%;
+  font-size: 20px;
+
  }
  .HeaderItem4{
   text-decoration: none;
   color:black;
   padding-top:10px;
   font-size: 15px;
-  padding-left: 45px;
+  padding-left: 3%;
+
  }
  .HeaderItem5{
+  text-decoration: none;
+  color:black;
+  padding-top:10px;
+  font-size: 15px;
+  padding-left: 15%;
+
+ }
+ .HeaderItem6{
   padding-top:7px;
   font-size: 18px;
-  padding-left: 45px;
+  padding-left: 5%;
   font-weight: bold;
+
+
  }
 .HeaderLogo{
   height: 40px;
@@ -50,8 +71,8 @@
 }
 /*home*/
 .AdminEntire{
-  padding-left: 80px;
-  padding-right: 190px;
+  padding-left: 10%;
+  padding-right: 10%;
 }
 .MainTitle{
  padding-left: 300px;
@@ -90,6 +111,8 @@
   padding-top: 150px;
 }
 .item1 {
+  text-decoration: none;
+  color:black;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -101,26 +124,26 @@
 .AdminLogin{
   display: flex;
   flex-direction: column;
-  padding-left: 80px;
-  padding-right: 190px;
+   padding-left: 10%;
+  padding-right: 10%;
 
 }
 .LoginText{
   padding-top: 100px;
-  padding-left:370px;
+  padding-left:40%;
   padding-bottom: 20px;
   font-size: 23px;
 } 
 .LoginInput{
   margin-top: 3px;
-  margin-left: 370px;
+  margin-left: 38%;
   width:200px;
   height: 30px;
   border-radius: 5px;
 }
 .LoginButton{
-  margin-left:370px;
-  margin-right:366px;
+  margin-left:38%;
+  width:210px;
   margin-top: 50px;
   border: 1px solid black;
   background-color: black;
@@ -147,8 +170,7 @@
 }
 .UserMenuList{
   display: flex;
-  background-color:#C8C8C8;
- width: 549px;
+
  height:50px;
   
 }
@@ -167,25 +189,39 @@
   
   
 }
-.UserItem1{
+.UserMenuItem1,.UserMenuItem2,.UserMenuItem3,.UserMenuItem4,.UserMenuItem5{
+  height:auto;
+  min-height:50px;
+ overflow: auto;
+  
+  border: 1px solid black;
+  text-align: center;
+  font-size: 13px;
+  display: flex;      
+  align-items: center;
+  justify-content: center; 
+  background-color:#C8C8C8;
+}
+.UserItem1,.UserMenuItem1{
   width:70px;
 }
-.UserItem2{
+.UserItem2,.UserMenuItem2{
   width:70px;
 }
-.UserItem3{
+.UserItem3,.UserMenuItem3{
   width:70px;
 }
-.UserItem4{
+.UserItem4,.UserMenuItem4{
   width:150px;
 }
-.UserItem5{
+.UserItem5,.UserMenuItem5{
   width:60px;
 }
 .UserItem6{
   width:60px;
   color:blue;
   text-decoration: none;
+
 }
 /*  useredit */
 .UserEdit{
@@ -257,8 +293,7 @@ text-align: center;
 }
 .QuizMenuList{
   display: flex;
-  background-color:#C8C8C8;
- width: 456px;
+
  height:40px;
   
 }
@@ -271,7 +306,7 @@ text-align: center;
    display: flex;      
    align-items: center;
    justify-content: center; 
-
+   background-color:#C8C8C8;
 }
 .QuizItem1,.QuizItem2,.QuizItem3,.QuizItem4{
   
@@ -389,7 +424,7 @@ text-align: center;
   border: 1px solid black;
   margin-left: 40px;
   height: 300px;
-  width: 200px;
+  width: 23%;
 }
 .ContentMain1 ,.ContentMain2 ,.ContentMain3{
   display: flex;
@@ -398,7 +433,7 @@ text-align: center;
   align-items: center; 
   border-bottom: 1px solid black;
   height: 70px;
-  width: 200px;
+  width: 100%;
 }
 .ContentMain1{
   background-color: rgba(7, 191, 38, 0.6);
@@ -433,8 +468,6 @@ text-align: center;
 }
 .RoundMenuList{
   display: flex;
-  background-color:#C8C8C8;
- width: 394px;
  height:40px;
   
 }
@@ -447,6 +480,7 @@ text-align: center;
    display: flex;      
    align-items: center;
    justify-content: center; 
+   background-color:#C8C8C8;
 
 }
 .RoundItem1,.RoundItem2{

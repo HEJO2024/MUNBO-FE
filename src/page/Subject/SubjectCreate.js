@@ -8,21 +8,21 @@ const SubjectCreate=()=>{
     const [data,setData]=useState();
     const navigate=useNavigate();
     const handleSubmit=async()=>{
-        axios.post(`${process.env.REACT_APP_API_URL}/admin/subject/create`,{
+        axios.post(`/admin/subject/create`,{
             subjectName:data
         }).then(response => {        
             alert("과목이 생성되었습니다.");
             window.location.reload();
         })
         .catch(error => {
-          /* if(error.response.status===500){
+           if(error.response.status===500){
              alert(error.response.data.message);
            }
           else if(error.response.status===401 || error.response.status===403){
              alert(error.response.data.message);
              sessionStorage.removeItem("token");
              navigate("/admin/login");
-            }*/
+            }
         });
         navigate("/admin/subject/view");
 

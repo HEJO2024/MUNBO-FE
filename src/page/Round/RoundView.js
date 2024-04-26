@@ -14,13 +14,18 @@ useEffect(() => {
  
    const fetchuserData = async () => {     
      try {
-         const response = await axios.get(`${process.env.REACT_APP_API_URL}/admin/round/view`);
+         const response = await axios.get(`/admin/round/view`);
          setData(response.data);
 
      }catch (error) {
-    //  if(error.response.status===500){
-     //  alert(error.response.data.message);
+      if(error.response.status===500){
+       alert(error.response.data.message);
       }
+      else if(error.response.status===401 || error.response.status===403){
+        alert(error.response.data.message);
+        sessionStorage.removeItem("token");
+        navigate("/admin/login");
+       }}
      }  // api로 회차 정보 받아오는 함수
      const handleRemove=async(roundId)=>{
         Swal.fire({
@@ -35,7 +40,7 @@ useEffect(() => {
         }).then((result) => { 
             if (result.isConfirmed) { //삭제하기 누르면
         
-              axios.post(`${process.env.REACT_APP_API_URL}/admin/round/delete`, {
+              axios.post(`/admin/round/delete`, {
                 roundId:roundId,
                 
              })
@@ -62,11 +67,15 @@ useEffect(() => {
                   'fail'
               );
               }
-              Swal.fire(
+              else if(error.response.status===401 || error.response.status===403){
+                sessionStorage.removeItem("token");
+               Swal.fire(
                 '삭제 실패!',
-                '해당 항목 삭제에 실패했습니다.',
-                'success'
-            );
+                error.response.data.message,
+                'fail'
+            ) ;
+             navigate('/admin/login')
+            };
                  window.location.reload();
              });
             }

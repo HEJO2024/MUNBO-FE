@@ -18,7 +18,7 @@ const RoundEdit=()=>{
      
        const fetchuserData = async () => {     
          try {
-             const response = await axios.get(`${process.env.REACT_APP_API_URL}/admin/round/view`);
+             const response = await axios.get(`/admin/round/view`);
              const userData = response.data.find(item => item.roundId ==id);
              setData({
                 roundId:userData.roundId,
@@ -26,13 +26,18 @@ const RoundEdit=()=>{
         
     
          }catch (error) {
-        //  if(error.response.status===500){
-         //  alert(error.response.data.message);
+          if(error.response.status===500){
+          alert(error.response.data.message);
           }
-         }  // api로 회차 정보 받아오는 함수
+          else if(error.response.status===401 || error.response.status===403){
+            alert(error.response.data.message);
+            sessionStorage.removeItem("token");
+            navigate("/admin/login");
+           }
+         } } // api로 회차 정보 받아오는 함수
 
          const handleSubmit=()=>{
-            axios.post(`${process.env.REACT_APP_API_URL}/admin/round/update`,{
+            axios.post(`/admin/round/update`,{
                 roundName:data.roundName,
                 roundId:data.roundId
             }).then(response => {        
@@ -40,14 +45,14 @@ const RoundEdit=()=>{
                 window.location.reload();
             })
             .catch(error => {
-              /* if(error.response.status===500){
+               if(error.response.status===500){
                  alert(error.response.data.message);
                }
               else if(error.response.status===401 || error.response.status===403){
                  alert(error.response.data.message);
                  sessionStorage.removeItem("token");
                  navigate("/admin/login");
-                }*/
+                }
             });
             navigate("/admin/round/view");
 

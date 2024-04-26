@@ -1,6 +1,7 @@
 {
   "name": "admin",
   "version": "0.1.0",
+  "proxy":"http://ec2-52-78-80-253.ap-northeast-2.compute.amazonaws.com:3000",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",

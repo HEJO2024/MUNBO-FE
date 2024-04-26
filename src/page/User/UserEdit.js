@@ -40,7 +40,7 @@ const UserEdit=()=>{
     }; //중복확인 처리 함수
 
     const handleEdit= async ()=>{
-      axios.put(`${process.env.REACT_APP_API_URL}/admin/users/update`, 
+      axios.put(`/admin/users/update`, 
        {
         userId:data.userId,
         passwd:data.passwd,
@@ -93,7 +93,7 @@ const UserEdit=()=>{
    
      const fetchuserData = async () => {     
        try {
-           const response = await axios.get(`${process.env.REACT_APP_API_URL}/admin/users/listView`,{
+           const response = await axios.get(`/admin/users/listView`,{
             headers:{
               'Authorization':token
             }

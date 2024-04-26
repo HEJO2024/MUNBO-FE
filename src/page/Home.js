@@ -26,8 +26,8 @@ const Home=()=>{
             <div>회원관리</div></Link>
             <Link to="/admin/quiz/view" className="item1"><img src={process.env.PUBLIC_URL + '/quiz.jpg'} width = '50px' className="itemLogo1" />
             <div>기출문제관리</div></Link>
-            <div className="item"><img src={process.env.PUBLIC_URL + '/search.png'} width = '50px' className="itemLogo" />
-            <div>키워드/과목/회차 관리</div></div>
+            <Link to="/admin/content/select" className="item"><img src={process.env.PUBLIC_URL + '/search.png'} width = '50px' className="itemLogo" />
+            <div>키워드/과목/회차 관리</div></Link>
             <div className="item"><img src={process.env.PUBLIC_URL + '/pi.png'} width = '50px' className="itemLogo" />
             <div>통계/평가</div></div>
             <div className="item"><img src={process.env.PUBLIC_URL + '/GptLogo.png'} width = '50px' className="itemLogo" />

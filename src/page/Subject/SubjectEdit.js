@@ -18,7 +18,7 @@ const SubjectEdit=()=>{
      
        const fetchuserData = async () => {     
          try {
-             const response = await axios.get(`${process.env.REACT_APP_API_URL}/admin/subject/view`);
+             const response = await axios.get(`/admin/subject/view`);
              const userData = response.data.find(item => item.subjectId ==id);
              setData({
                 subjectId:userData.subjectId,
@@ -26,13 +26,18 @@ const SubjectEdit=()=>{
         
     
          }catch (error) {
-        //  if(error.response.status===500){
-         //  alert(error.response.data.message);
+         if(error.response.status===500){
+           alert(error.response.data.message);
           }
-         }  // api로 과목 정보 받아오는 함수
+          else if(error.response.status===401 || error.response.status===403){
+            alert(error.response.data.message);
+            sessionStorage.removeItem("token");
+            navigate("/admin/login");
+           }
+         } } // api로 과목 정보 받아오는 함수
 
          const handleSubmit=()=>{
-            axios.post(`${process.env.REACT_APP_API_URL}/admin/subject/update`,{
+            axios.post(`/admin/subject/update`,{
                 subjectName:data.subjectName,
                 subjectId:data.subjectId
             }).then(response => {        
@@ -40,14 +45,14 @@ const SubjectEdit=()=>{
                 window.location.reload();
             })
             .catch(error => {
-              /* if(error.response.status===500){
+               if(error.response.status===500){
                  alert(error.response.data.message);
                }
               else if(error.response.status===401 || error.response.status===403){
                  alert(error.response.data.message);
                  sessionStorage.removeItem("token");
                  navigate("/admin/login");
-                }*/
+                }
             });
             navigate("/admin/subject/view");
            }  // axios 이용하여 회차 생성처리하는 함수

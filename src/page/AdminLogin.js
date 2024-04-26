@@ -10,7 +10,7 @@ const AdminLogin=()=>{
    
   const handleSubmit=async()=>{
    try {
-      const response = await axios.post(`${process.env.REACT_APP_API_URL}/admin/users/login`, { 
+      const response = await axios.post(`/admin/users/login`, { 
          userId:id,
          passwd:password });
          console.log(response)

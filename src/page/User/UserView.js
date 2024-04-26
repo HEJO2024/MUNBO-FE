@@ -18,7 +18,7 @@ const UserView=()=>{
        
        try {
 
-           const response = await axios.get(`${process.env.REACT_APP_API_URL}/admin/users/listView`,{
+           const response = await axios.get(`/admin/users/listView`,{
            headers:{
               'Authorization':token
             }
@@ -50,7 +50,7 @@ const handleDelete=async(userId)=>{
 }).then((result) => { 
     if (result.isConfirmed) { //삭제하기 누르면
 
-      axios.delete(`${process.env.REACT_APP_API_URL}/admin/users/delete`, 
+      axios.delete(`/admin/users/delete`, 
       {
         userId:userId,
       },
@@ -89,7 +89,7 @@ const handleDelete=async(userId)=>{
        Swal.fire(
         '삭제 실패!',
         error.response.data.message,
-        'success'
+        'fail'
     ) ;
      navigate('/admin/login')
     };
@@ -105,9 +105,10 @@ const handleDelete=async(userId)=>{
         <div className="UserText">사용자 조회</div>
         <div className="UserAll">
         <div className="UserMenuList">
-            <div className="UserItem1">ID</div> <div className="UserItem2">비밀번호</div>
-             <div className="UserItem3">닉네임</div> <div className="UserItem4">이메일</div> <div className="UserItem5">식별코드</div> 
-             <div className="UserItem5">수정하기</div> <div className="UserItem5">삭제하기</div>
+            <div className="UserMenuItem1">ID</div> <div className="UserMenuItem2">비밀번호</div>
+             <div className="UserMenuItem3">닉네임</div> <div className="UserMenuItem4">이메일</div> 
+             <div className="UserMenuItem5">식별코드</div> 
+             <div className="UserMenuItem5">수정하기</div> <div className="UserMenuItem5">삭제하기</div>
         </div>
         <div>
         {data&&data.map((it)=>{

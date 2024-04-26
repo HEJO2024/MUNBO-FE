@@ -24,7 +24,7 @@ const QuizEdit=()=>{
   
        const fetchuserData = async () => {     
          try {
-             const response = await axios.get(`${process.env.REACT_APP_API_URL}/admin/quiz/view`);
+             const response = await axios.get(`/admin/quiz/view`);
              const userData = response.data.find(item => item.quizId ==id);
              setData({
                 quizId:userData.quizId,
@@ -39,13 +39,18 @@ const QuizEdit=()=>{
              });
 
          }catch (error) {
-         // if(error.response.status===500){
-           //alert(error.response.data.message);
+          if(error.response.status===500){
+           alert(error.response.data.message);
           }
+          else if(error.response.status===401 || error.response.status===403){
+            alert(error.response.data.message);
+            sessionStorage.removeItem("token");
+            navigate("/admin/login");
+           }}
          } // api로 수정 정보 받아오는 함수
 
    const handleSubmit= async ()=>{
-    axios.post(`${process.env.REACT_APP_API_URL}/admin/quiz/update`, {
+    axios.post(`/admin/quiz/update`, {
         quizId:data.quizId,
         subjectId:data.subjectId,
         roundId:data.roundId,
@@ -61,9 +66,14 @@ const QuizEdit=()=>{
          alert("문제가 수정되었습니다.");
      })
      .catch(error => {
-       // if(error.response.status===500){
-        //  alert(error.response.data.message);
-     //}
+        if(error.response.status===500){
+         alert(error.response.data.message);
+        }
+        else if(error.response.status===401 || error.response.status===403){
+            alert(error.response.data.message);
+            sessionStorage.removeItem("token");
+            navigate("/admin/login");
+           }
      });
      navigate("/admin/quiz/view");
     }  // axios 이용하여 수정처리하는 함수

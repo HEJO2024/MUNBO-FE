@@ -8,21 +8,21 @@ const RoundCreate=()=>{
     const [data,setData]=useState();
     const navigate=useNavigate();
     const handleSubmit=async()=>{
-        axios.post(`${process.env.REACT_APP_API_URL}/admin/round/create`,{
+        axios.post(`/admin/round/create`,{
             roundName:data
         }).then(response => {        
             alert("회차가 생성되었습니다.");
             window.location.reload();
         })
         .catch(error => {
-          /* if(error.response.status===500){
+          if(error.response.status===500){
              alert(error.response.data.message);
            }
           else if(error.response.status===401 || error.response.status===403){
              alert(error.response.data.message);
              sessionStorage.removeItem("token");
              navigate("/admin/login");
-            }*/
+            }
         });
         navigate("/admin/round/view");
 
