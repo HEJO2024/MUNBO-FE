@@ -44,8 +44,8 @@
   text-decoration: none;
   color:black;
   padding-top:10px;
-  font-size: 15px;
-  padding-left: 3%;
+  font-size: 16px;
+  padding-left: 6%;
 
  }
  .HeaderItem5{
@@ -97,6 +97,8 @@
 }
 .MainMenu{
   display: flex;
+  margin-left: 5%;
+  margin-top: 3%;
 }
 
 
@@ -107,8 +109,9 @@
   flex-direction: column;
   align-items: center;
   cursor: pointer;
-  padding-left: 70px;
+  padding-left: 80px;
   padding-top: 150px;
+  
 }
 .item1 {
   text-decoration: none;
@@ -117,8 +120,18 @@
   flex-direction: column;
   align-items: center;
   cursor: pointer;
-  padding-left: 70px;
-  padding-top: 140px;
+  padding-left: 80px;
+  padding-top: 170px;
+}
+.item2 {
+  text-decoration: none;
+  color:black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  padding-left: 80px;
+  padding-top: 152px;
 }
 /* login */
 .AdminLogin{
@@ -157,7 +170,7 @@
 }
 /*  userview  */
 .UserText{
-  font-size: 23px;
+  font-size: 29px;
   padding-left: 70px;
   padding-top: 70px;
 }
@@ -178,12 +191,12 @@
 .UserItem1,.UserItem2,.UserItem3,.UserItem4,.UserItem5,.UserItem6{
   
   height:auto;
-  min-height:50px;
+  min-height:70px;
  overflow: auto;
   
   border: 1px solid black;
   text-align: center;
-  font-size: 13px;
+  font-size: 14px;
   display: flex;      
   align-items: center;
   justify-content: center; 
@@ -197,14 +210,14 @@
   
   border: 1px solid black;
   text-align: center;
-  font-size: 13px;
+  font-size: 14px;
   display: flex;      
   align-items: center;
   justify-content: center; 
   background-color:#C8C8C8;
 }
 .UserItem1,.UserMenuItem1{
-  width:70px;
+  width:60px;
 }
 .UserItem2,.UserMenuItem2{
   width:70px;
@@ -235,13 +248,13 @@
 .UserEditText{
   padding-top: 70px;
   padding-left: 100px;
-  font-size: 20px;
+  font-size: 25px;
 }
 .UserEditButton{
   display: flex;
- padding-left: 230px;
+ padding-left: 250px;
  padding-top: 30px;
- height: 23px;
+ height: 25px;
 }
 .UserEditId{
   display: flex;
@@ -269,8 +282,8 @@ font-size: 13px;
 text-align: center;
 }
 .UserEditInput{
-  height: 30px;
-  width: 230px;
+  height: 35px;
+  width: 250px;
   margin-bottom: 10px;
 }
 .Duplication{
@@ -295,7 +308,7 @@ text-align: center;
 .QuizMenuList{
   display: flex;
 
- height:40px;
+ height:50px;
   
 }
 .QuizMenuItem1,.QuizMenuItem2,.QuizMenuItem3,.QuizMenuItem4{
@@ -303,7 +316,7 @@ text-align: center;
   overflow: auto;
    border: 1px solid black;
    text-align: center;
-   font-size: 13px;
+   font-size: 14px;
    display: flex;      
    align-items: center;
    justify-content: center; 
@@ -311,11 +324,11 @@ text-align: center;
 }
 .QuizItem1,.QuizItem2,.QuizItem3,.QuizItem4{
   
-  height:50px;
+  height:70px;
  overflow: auto;
   border: 1px solid black;
   text-align: center;
-  font-size: 13px;
+  font-size: 14px;
   display: flex;      
   align-items: center;
   justify-content: center; 
@@ -469,7 +482,7 @@ text-align: center;
 }
 .RoundMenuList{
   display: flex;
- height:40px;
+ height:50px;
   
 }
 .RoundMenuItem1,.RoundMenuItem2{
@@ -477,7 +490,7 @@ text-align: center;
   overflow: auto;
    border: 1px solid black;
    text-align: center;
-   font-size: 13px;
+   font-size: 14px;
    display: flex;      
    align-items: center;
    justify-content: center; 
@@ -486,11 +499,11 @@ text-align: center;
 }
 .RoundItem1,.RoundItem2{
   
-  height:30px;
+  height:50px;
  overflow: auto;
   border: 1px solid black;
   text-align: center;
-  font-size: 13px;
+  font-size: 14px;
   display: flex;      
   align-items: center;
   justify-content: center; 
@@ -513,9 +526,10 @@ text-align: center;
 .RoundCreate{
   border: 1px solid black;
   border-radius: 5px;
-  width:50px;
+  width:60px;
+  height: 25px;
   font-size: 14px;
-  margin-left: 410px;
+  margin-left: 400px;
   margin-top: 10px;
   display: flex;
   justify-content: center; 
