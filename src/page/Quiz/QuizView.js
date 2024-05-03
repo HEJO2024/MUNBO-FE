@@ -2,20 +2,28 @@ import { useEffect, useState } from "react";
 import AdminHeader from "../../components/AdminHeader";
 import axios from "axios";
 import AdminButton from "../../components/AdminButton";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import Swal from 'sweetalert2';
 const QuizView=()=>{
     const [quiz,setQuiz]=useState([]);
     const navigate=useNavigate();
+    const {id}=useParams();
+    const token=sessionStorage.getItem("token")
     useEffect(() => {
-        fetchuserData();
+        fetchquizData();
      }, []); //가져온 문제데이터 실행
   
      
-       const fetchuserData = async () => {     
+       const fetchquizData = async () => {     
          try {
-             const response = await axios.get(`/admin/quiz/view`);
-             setQuiz(response.data);
+             const response = await axios.get(`/admin/quiz/listView?subjectId=${id}`, { 
+              headers:{
+               'Authorization':token
+             }
+            
+           })
+           if(response)
+             setQuiz(response.data.quizList);
 
          }catch (error) {
           if(error.response.status===500){
@@ -41,10 +49,13 @@ const QuizView=()=>{
         }).then((result) => { 
             if (result.isConfirmed) { //삭제하기 누르면
         
-              axios.post(`/admin/quiz/delete`, {
-                quizId:quizId,
+              axios.delete(`/admin/quiz/delete`, {
+                headers:{
+                  'Authorization':token
+                },data:{quizId:quizId,
                 
-             })
+             }, 
+           })
              .then(response => {   //삭제성공   
               Swal.fire(
                 '삭제 완료!',
@@ -97,6 +108,7 @@ const QuizView=()=>{
         <div className="QuizList">         
         <div className="QuizItem1">{it.quizId}</div>
         <div className="QuizItem2">{it.quizContent}</div> 
+        <div >{it.subjectId} </div>
         <Link to={`/admin/quiz/edit/${it.quizId}`} className="QuizItem3">수정하기</Link>
         <AdminButton text="삭제하기" onClick={()=>handleDelete(it.quizId)} className="QuizItem3"/>
         </div>

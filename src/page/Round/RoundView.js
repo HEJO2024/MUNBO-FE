@@ -7,15 +7,21 @@ import Swal from 'sweetalert2';
 const RoundView=()=>{
 const [data,setData]=useState([]);
 const navigate=useNavigate();
+const token=sessionStorage.getItem("token")
 useEffect(() => {
-    fetchuserData();
+    fetchroundData();
  }, []); //가져온 회차데이터 실행
 
  
-   const fetchuserData = async () => {     
+   const fetchroundData = async () => {     
      try {
-         const response = await axios.get(`/admin/round/view`);
-         setData(response.data);
+         const response = await axios.get(`/admin/round/listView`, {
+          headers:{
+           'Authorization':token
+         }
+       })
+       if(response)
+         setData(response.data.round);
 
      }catch (error) {
       if(error.response.status===500){
@@ -40,10 +46,16 @@ useEffect(() => {
         }).then((result) => { 
             if (result.isConfirmed) { //삭제하기 누르면
         
-              axios.post(`/admin/round/delete`, {
-                roundId:roundId,
+              axios.delete(`/admin/round/delete`, {
+               
+                headers:{
+                  'Authorization':token
+                },data:{
+                   roundId:roundId,
                 
-             })
+             }
+      
+           })
              .then(response => {   //삭제성공   
               Swal.fire(
                 '삭제 완료!',
@@ -79,7 +91,7 @@ useEffect(() => {
                  window.location.reload();
              });
             }
-        });  //삭제함수
+        });  //삭제함수 
     }
 return(
     <div className="AdminEntire">

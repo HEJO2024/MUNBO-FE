@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useNavigate, useParams, useSearchParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import AdminHeader from "../../components/AdminHeader";
 import AdminButton from "../../components/AdminButton";
 
@@ -11,18 +11,23 @@ const RoundEdit=()=>{
     });
     const {id}=useParams();
     const navigate=useNavigate();
+    const token=sessionStorage.getItem("token")
     useEffect(() => {
-        fetchuserData();
+        fetchroundData();
      }, []); //가져온 회차데이터 실행
     
      
-       const fetchuserData = async () => {     
+       const fetchroundData = async () => {     
          try {
-             const response = await axios.get(`/admin/round/view`);
-             const userData = response.data.find(item => item.roundId ==id);
+             const response = await axios.get(`/admin/round/listView` ,{
+              headers:{
+               'Authorization':token
+             }
+           })
+             const roundData = response.data.round.find(item => item.roundId ==id);
              setData({
-                roundId:userData.roundId,
-                roundName:userData.roundName});
+                roundId:roundData.roundId,
+                roundName:roundData.roundName});
         
     
          }catch (error) {
@@ -36,11 +41,15 @@ const RoundEdit=()=>{
            }
          } } // api로 회차 정보 받아오는 함수
 
-         const handleSubmit=()=>{
-            axios.post(`/admin/round/update`,{
+         const handleSubmit=async ()=>{
+            axios.put(`/admin/round/update`,{
                 roundName:data.roundName,
                 roundId:data.roundId
-            }).then(response => {        
+            }, {
+              headers:{
+               'Authorization':token
+             }
+           }).then(response => {        
                 alert("회차가 수정되었습니다.");
                 window.location.reload();
             })
@@ -56,7 +65,7 @@ const RoundEdit=()=>{
             });
             navigate("/admin/round/view");
 
-           }  // axios 이용하여 회차 생성처리하는 함수
+           }  // axios 이용하여 회차 수정처리하는 함수
 
          const handleChange = (event) => {
             const { name, value } = event.target;

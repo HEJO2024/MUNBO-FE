@@ -7,10 +7,15 @@ import axios from "axios";
 const RoundCreate=()=>{
     const [data,setData]=useState();
     const navigate=useNavigate();
+    const token=sessionStorage.getItem("token")
     const handleSubmit=async()=>{
         axios.post(`/admin/round/create`,{
             roundName:data
-        }).then(response => {        
+        }, {
+            headers:{
+             'Authorization':token
+           }
+         }).then(response => {        
             alert("회차가 생성되었습니다.");
             window.location.reload();
         })

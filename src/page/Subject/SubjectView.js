@@ -7,15 +7,21 @@ import Swal from 'sweetalert2';
 const SubjectView=()=>{
 const [data,setData]=useState([]);
 const navigate=useNavigate();
+const token=sessionStorage.getItem("token")
 useEffect(() => {
-    fetchuserData();
+    fetchsubjectData();
  }, []); //가져온 과목데이터 실행
 
  
-   const fetchuserData = async () => {     
+   const fetchsubjectData = async () => {     
      try {
-         const response = await axios.get(`/admin/subject/listView`);
-         setData(response.data);
+         const response = await axios.get(`/admin/subject/listView`,{
+          headers:{
+           'Authorization':token
+         }
+       })
+       if(response)
+         setData(response.data.subjectList);
 
      }catch (error) {
       if(error.response.status===500){
@@ -40,10 +46,15 @@ useEffect(() => {
         }).then((result) => { 
             if (result.isConfirmed) { //삭제하기 누르면
         
-              axios.post(`/admin/subject/delete`, {
-                subjectId:subjectId,
+              axios.delete(`/admin/subject/delete`, 
+              {
+                  headers:{
+                   'Authorization':token
+                 },data:{
+                subjectId:subjectId
                 
-             })
+             },
+           })
              .then(response => {   //삭제성공   
               Swal.fire(
                 '삭제 완료!',

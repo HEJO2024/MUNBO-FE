@@ -7,10 +7,15 @@ import axios from "axios";
 const SubjectCreate=()=>{
     const [data,setData]=useState();
     const navigate=useNavigate();
+    const token=sessionStorage.getItem("token")
     const handleSubmit=async()=>{
         axios.post(`/admin/subject/create`,{
             subjectName:data
-        }).then(response => {        
+        }, {
+            headers:{
+             'Authorization':token
+           }
+         }).then(response => {        
             alert("과목이 생성되었습니다.");
             window.location.reload();
         })

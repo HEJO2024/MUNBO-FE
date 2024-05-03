@@ -13,6 +13,13 @@ import RoundEdit from './page/Round/RoundEdit';
 import SubjectView from './page/Subject/SubjectView';
 import SubjectCreate from './page/Subject/SubjectCreate';
 import SubjectEdit from './page/Subject/SubjectEdit';
+import KeywordView from './page/Keyword/KeywordView';
+import KeywordCreate from './page/Keyword/KeywordCreate';
+import KeywordEdit from './page/Keyword/KeywordEdit';
+import QuizSubjectList from './page/Quiz/QuizSubjectList';
+import AnalyticsSelect from './page/AnalyticsSelect';
+import ViewRate from './page/ViewRate';
+import UserAssessment from './page/UserAssessment';
 function App() {
 
 
@@ -28,8 +35,9 @@ function App() {
 
   <Route path='user/view' element={<UserView/>}/>
   <Route path='user/edit/:id' element={<UserEdit/>}/>
-
-  <Route path='quiz/view' element={<QuizView/>}/>
+   
+  <Route path='quiz/subject/view' element={<QuizSubjectList/>}/>
+  <Route path='quiz/view/:id' element={<QuizView/>}/>
   <Route path="quiz/edit/:id" element={<QuizEdit/>}/>
 
   <Route path='content/select' element={<ContentSelect/>}/>
@@ -41,6 +49,14 @@ function App() {
   <Route path="subject/view" element={<SubjectView/>}/>
   <Route path='subject/create'element={<SubjectCreate/>}/>
   <Route path='subject/edit/:id'element={<SubjectEdit/>}/>
+
+  <Route path="keyword/view" element={<KeywordView/>}/>
+  <Route path='keyword/create'element={<KeywordCreate/>}/>
+  <Route path='keyword/edit/:id'element={<KeywordEdit/>}/>
+
+  <Route path="analytics/select" element={<AnalyticsSelect/>}/>
+  <Route path="viewrate" element={<ViewRate/>}/>
+  <Route path="userassessment" element={<UserAssessment/>}/>
 </Route>
 </Routes>
     </div>

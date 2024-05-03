@@ -11,18 +11,23 @@ const SubjectEdit=()=>{
     });
     const {id}=useParams();
     const navigate=useNavigate();
+    const token=sessionStorage.getItem("token")
     useEffect(() => {
-        fetchuserData();
+        fetchsubjectData();
      }, []); //가져온 과목데이터 실행
     
      
-       const fetchuserData = async () => {     
+       const fetchsubjectData = async () => {     
          try {
-             const response = await axios.get(`/admin/subject/view`);
-             const userData = response.data.find(item => item.subjectId ==id);
+             const response = await axios.get(`/admin/subject/listView`, {
+              headers:{
+               'Authorization':token
+             }
+           })
+             const subjectData = response.data.subjectList.find(item => item.subjectId ==id);
              setData({
-                subjectId:userData.subjectId,
-                subjectName:userData.subjectName});
+                subjectId:subjectData.subjectId,
+                subjectName:subjectData.subjectName});
         
     
          }catch (error) {
@@ -36,11 +41,15 @@ const SubjectEdit=()=>{
            }
          } } // api로 과목 정보 받아오는 함수
 
-         const handleSubmit=()=>{
-            axios.post(`/admin/subject/update`,{
+         const handleSubmit=async ()=>{
+            axios.put(`/admin/subject/update`,{
                 subjectName:data.subjectName,
                 subjectId:data.subjectId
-            }).then(response => {        
+            }, {
+              headers:{
+               'Authorization':token
+             }
+           }).then(response => {        
                 alert("과목이 수정되었습니다.");
                 window.location.reload();
             })
@@ -55,7 +64,7 @@ const SubjectEdit=()=>{
                 }
             });
             navigate("/admin/subject/view");
-           }  // axios 이용하여 회차 생성처리하는 함수
+           }  // axios 이용하여 회차 수정처리하는 함수
 
          const handleChange = (event) => {
             const { name, value } = event.target;

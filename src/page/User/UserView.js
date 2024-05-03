@@ -52,11 +52,10 @@ const handleDelete=async(userId)=>{
 
       axios.delete(`/admin/users/delete`, 
       {
-        userId:userId,
-      },
-      {
         headers:{
           'Authorization':token
+        },data:{
+          userId:userId,
         },
          
 

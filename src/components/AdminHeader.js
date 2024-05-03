@@ -33,9 +33,9 @@ const AdminHeader=()=>{
     <div className="HeaderItem2" onClick={handleLoginClick}> Login </div>
     :<div className="HeaderItem3" >
      <Link to="/admin/user/view" className="HeaderItem4">회원관리</Link> 
-     <Link to="/admin/quiz/view" className="HeaderItem4">기출문제</Link> 
+     <Link to="/admin/quiz/subject/view" className="HeaderItem4">기출문제</Link> 
      <Link to="/admin/content/select" className="HeaderItem4">키워드/과목/회차</Link>
-     <div className="HeaderItem4">통계/평가</div>
+     <Link to="/admin/analytics/select" className="HeaderItem4">통계/평가</Link>
      <div className="HeaderItem4">토큰사용량</div>
      <div onClick={handleLogoutClick} className="HeaderItem5">로그아웃</div>
      <div className="HeaderItem6">관리자</div> </div>}

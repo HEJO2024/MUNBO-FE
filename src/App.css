@@ -25,7 +25,7 @@
 }
 .HeaderItem2 {
   display: flex;
- margin-left: 80%;
+ margin-left: 85%;
   padding-top: 20px;
   font-size: 20px;
   white-space: nowrap; 
@@ -37,7 +37,7 @@
   padding-left:5%;
   padding-top: 20px;
   width: 100%;
-  font-size: 20px;
+  font-size: 18px;
 
  }
  .HeaderItem4{
@@ -45,7 +45,7 @@
   color:black;
   padding-top:10px;
   font-size: 16px;
-  padding-left: 6%;
+  padding-left: 4%;
 
  }
  .HeaderItem5{
@@ -53,7 +53,7 @@
   color:black;
   padding-top:10px;
   font-size: 15px;
-  padding-left: 15%;
+  padding-left: 17%;
 
  }
  .HeaderItem6{
@@ -296,6 +296,25 @@ text-align: center;
   background-color: black;
   color: white;
 }
+/*     quiz subject      */
+.QuizSubjectList{
+  margin-top: 12%;
+  margin-left: 25%;
+}
+.QuizSubjectItem{
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  border: 1px solid black;
+  border-radius: 5px;
+  margin-top: 5%;
+  width: 35%;
+  height: 40px;
+  font-size:17px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.400);
+  color: white;
+}
 /*  quiz     */
 .QuizAll{
   padding-top: 50px;
@@ -337,10 +356,10 @@ text-align: center;
   
 }
 .QuizItem1,.QuizMenuItem1{
-  width: 30px;
+  width: 50px;
 }
 .QuizItem2,.QuizMenuItem2{
-  width:300px;
+  width:320px;
 }
 .QuizItem3{
   width:60px;
@@ -363,6 +382,19 @@ text-align: center;
   width: 550px;
   height: 100px;
   font-family: sans-serif;
+}
+.QuizRound{
+  margin-top: 30px;
+  margin-left: 70px;
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 250px;
+  height: 30px;
+  font-size: 17px;
+  display: flex;
+  justify-content: center; /* 가로 중앙 정렬 */
+  align-items: center; /* 세로 중앙 정렬 */
+
 }
 .AnswAll{
   margin-left: 70px;
@@ -427,11 +459,24 @@ text-align: center;
   color:white;
   background-color: black;
 }
-/*  contentselect  */
+.SelectKeywordAll{
+  margin-left: 400px;
+  margin-top: 10px;
+}
+.SelectKeyword{
+  width: 210px;
+  height: 30px;
+}
+/*  contentselect analyticsselect */
 .ContentAll{
   display: flex;
   margin-top:70px;
   margin-left: 50px;
+}
+.AnalyticsAll{
+  display: flex;
+  margin-top:70px;
+  margin-left: 120px;
 }
 .ContentBox{
  
@@ -440,7 +485,13 @@ text-align: center;
   height: 300px;
   width: 23%;
 }
-.ContentMain1 ,.ContentMain2 ,.ContentMain3{
+.AnalyticsBox{
+  border: 1px solid black;
+  margin-left: 100px;
+  height: 300px;
+  width: 26%;
+}
+.ContentMain1 ,.ContentMain2 ,.ContentMain3,.AnalyticsMain1,.AnalyticsMain2{
   display: flex;
   flex-direction: column; 
   justify-content: center; 
@@ -458,6 +509,13 @@ text-align: center;
 .ContentMain3{
   background-color: rgba(255, 0, 0, 0.455);
 }
+.AnalyticsMain1{
+  background-color: rgba(127, 255, 212, 0.707);
+}
+.AnalyticsMain2{
+  background-color: wheat;
+}
+
 .ContentDetail{
   margin-top: 30px;
   margin-bottom: 50px;
@@ -560,4 +618,118 @@ text-align: center;
   display: flex;
   margin-left: 200px;
   margin-top: 10px;
+}
+/*  keyword view      */
+
+.KeywordAll{
+  padding-top: 50px;
+  padding-left: 70px;
+}
+.KeywordList{
+  display: flex;
+  
+}
+.KeywordMenuList{
+  display: flex;
+ height:50px;
+  
+}
+.KeywordMenuItem1,.KeywordMenuItem2,.KeywordMenuItem3,.KeywordMenuItem4{
+
+  overflow: auto;
+   border: 1px solid black;
+   text-align: center;
+   font-size: 14px;
+   display: flex;      
+   align-items: center;
+   justify-content: center; 
+   background-color:#C8C8C8;
+
+}
+.KeywordItem1,.KeywordItem2,.KeywordItem3,.KeywordItem4{
+  
+  height:40px;
+ overflow: auto;
+  border: 1px solid black;
+  text-align: center;
+  font-size: 14px;
+  display: flex;      
+  align-items: center;
+  justify-content: center; 
+  padding-top:10px;
+  padding-bottom: 10px;
+  
+}
+.KeywordItem1,.KeywordMenuItem1{
+  width: 60px;
+}
+.KeywordItem2,.KeywordMenuItem2{
+  width: 110px;
+}
+.KeywordItem3,.KeywordMenuItem3{
+  width: 230px;
+}
+.KeywordItem4{
+  width:70px;
+  color:blue;
+  text-decoration: none;
+}
+.KeywordMenuItem4{
+  width:70px;
+}
+.KeywordCreate{
+  border: 1px solid black;
+  border-radius: 5px;
+  width:60px;
+  height: 25px;
+  font-size: 14px;
+  margin-left: 550px;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  background-color:rgba(0, 0, 255, 0.315);
+}
+/*  keyword create   */
+.KeywordBoxAll{
+  display: flex;
+  flex-direction: column;
+}
+.KeywordCreateBox1{
+  height: 30px;
+  margin-left:70px;
+  margin-top: 30px;
+  width: 270px;
+  border-radius: 10px;
+}
+.KeywordCreateBox2{
+  height: 150px;
+  margin-left:70px;
+  margin-top: 30px;
+  border: 2px solid black;
+  width: 270px;
+  border-radius: 10px;
+}
+.KeywordCreateButton{
+  border: 1px solid black;
+  border-radius: 5px;
+  width:50px;
+  margin-left: 10px;
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  background-color: black;
+  color: white;
+}
+.KeywordCreateButtonList{
+  display: flex;
+  margin-left: 220px;
+  margin-top: 10px;
+}
+/*    viewrate      */
+.PieChart{
+  margin-left: 70px;
+  margin-top: 50px;
+  width: 700px;
+  height: 500px;
 }
