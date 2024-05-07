@@ -38,7 +38,7 @@ function App() {
    
   <Route path='quiz/subject/view' element={<QuizSubjectList/>}/>
   <Route path='quiz/view/:id' element={<QuizView/>}/>
-  <Route path="quiz/edit/:id" element={<QuizEdit/>}/>
+  <Route path="quiz/edit/:id/:subjectId" element={<QuizEdit/>}/>
 
   <Route path='content/select' element={<ContentSelect/>}/>
 

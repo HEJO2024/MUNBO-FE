@@ -23,7 +23,7 @@ const KeywordEdit=()=>{
                'Authorization':token
              }
            })
-             const keywordData = response.data.find(item => item.keywordId ==id);
+             const keywordData = response.data.keyword.find(item => item.keywordId ==id);
              setData({
                 keywordId:keywordData.keywordId,
                 keywordName:keywordData.keywordName,

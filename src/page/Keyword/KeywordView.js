@@ -95,6 +95,7 @@ const KeywordView=()=>{
         <div className="AdminEntire">
             <AdminHeader/>
             <div className="UserText">키워드 조회</div>
+            <AdminButton text="생성" className="KeywordCreate" onClick={()=>navigate("/admin/keyword/create")}/>
             <div className="KeywordAll">
             <div className="KeywordMenuList">
             <div className="KeywordMenuItem1">ID</div>
@@ -114,7 +115,6 @@ const KeywordView=()=>{
                 )
             })}
         </div>
-        <AdminButton text="생성" className="KeywordCreate" onClick={()=>navigate("/admin/keyword/create")}/>
         </div>
     )
 

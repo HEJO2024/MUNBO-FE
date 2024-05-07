@@ -53,7 +53,7 @@
   color:black;
   padding-top:10px;
   font-size: 15px;
-  padding-left: 17%;
+  padding-left: 23%;
 
  }
  .HeaderItem6{
@@ -298,8 +298,8 @@ text-align: center;
 }
 /*     quiz subject      */
 .QuizSubjectList{
-  margin-top: 12%;
-  margin-left: 25%;
+  margin-top: 10%;
+  margin-left: 32%;
 }
 .QuizSubjectItem{
   display: flex;
@@ -308,7 +308,7 @@ text-align: center;
   border: 1px solid black;
   border-radius: 5px;
   margin-top: 5%;
-  width: 35%;
+  width: 37%;
   height: 40px;
   font-size:17px;
   text-align: center;
@@ -481,13 +481,15 @@ text-align: center;
 .ContentBox{
  
   border: 1px solid black;
-  margin-left: 40px;
+  margin-left: 7%;
+  margin-top: 7%;
   height: 300px;
   width: 23%;
 }
 .AnalyticsBox{
   border: 1px solid black;
-  margin-left: 100px;
+  margin-top: 7%;
+  margin-left: 10%;
   height: 300px;
   width: 26%;
 }
@@ -648,7 +650,7 @@ text-align: center;
 }
 .KeywordItem1,.KeywordItem2,.KeywordItem3,.KeywordItem4{
   
-  height:40px;
+  height:auto;
  overflow: auto;
   border: 1px solid black;
   text-align: center;
@@ -656,18 +658,21 @@ text-align: center;
   display: flex;      
   align-items: center;
   justify-content: center; 
-  padding-top:10px;
+  padding-top:20px;
+  
   padding-bottom: 10px;
   
 }
+
+
 .KeywordItem1,.KeywordMenuItem1{
-  width: 60px;
+  width: 50px;
 }
 .KeywordItem2,.KeywordMenuItem2{
   width: 110px;
 }
 .KeywordItem3,.KeywordMenuItem3{
-  width: 230px;
+  width: 300px;
 }
 .KeywordItem4{
   width:70px;
@@ -683,8 +688,8 @@ text-align: center;
   width:60px;
   height: 25px;
   font-size: 14px;
-  margin-left: 550px;
-  margin-top: 10px;
+  margin-left: 614px;
+  margin-bottom: -40px;
   display: flex;
   justify-content: center; 
   align-items: center; 
@@ -696,18 +701,18 @@ text-align: center;
   flex-direction: column;
 }
 .KeywordCreateBox1{
-  height: 30px;
+  height: 50px;
   margin-left:70px;
   margin-top: 30px;
-  width: 270px;
+  width: 350px;
   border-radius: 10px;
 }
 .KeywordCreateBox2{
-  height: 150px;
+  height: 200px;
   margin-left:70px;
   margin-top: 30px;
   border: 2px solid black;
-  width: 270px;
+  width: 350px;
   border-radius: 10px;
 }
 .KeywordCreateButton{
@@ -723,7 +728,7 @@ text-align: center;
 }
 .KeywordCreateButtonList{
   display: flex;
-  margin-left: 220px;
+  margin-left: 300px;
   margin-top: 10px;
 }
 /*    viewrate      */
@@ -732,4 +737,58 @@ text-align: center;
   margin-top: 50px;
   width: 700px;
   height: 500px;
+}
+/*    user assess     */
+.AssessSelect{
+  margin-left: 30%;
+  width: 21%;
+  margin-bottom: -3%;
+}
+.AssessAll{
+  padding-top: 50px;
+  padding-left: 70px;
+}
+.AssessMenuAll{
+display: flex;
+height:50px;
+}
+.AssessMenuItem1,.AssessMenuItem2,.AssessMenuItem3,.AssessMenuItem4{
+  overflow: auto;
+   border: 1px solid black;
+   text-align: center;
+   font-size: 14px;
+   display: flex;      
+   align-items: center;
+   justify-content: center; 
+   background-color:#C8C8C8;
+}
+.AssessMenuItem1,.AssessItem1{
+  width: 120px;
+}
+.AssessMenuItem2,.AssessItem2{
+  width: 140px;
+}
+.AssessMenuItem3,.AssessItem3{
+  width: 140px;
+}
+.AssessMenuItem4,.AssessItem4{
+  width: 140px;
+}
+
+.AssessItemAll{
+  display: flex;
+}
+.AssessItem1,.AssessItem2,.AssessItem3,.AssessItem4{
+  height:auto;
+  overflow: auto;
+   border: 1px solid black;
+   text-align: center;
+   font-size: 14px;
+   display: flex;      
+   align-items: center;
+   justify-content: center; 
+   padding-top:20px;
+   
+   padding-bottom: 10px;
+   
 }

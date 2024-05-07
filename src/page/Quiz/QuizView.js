@@ -23,7 +23,7 @@ const QuizView=()=>{
             
            })
            if(response)
-             setQuiz(response.data.quizList);
+             setQuiz(response.data.quiz);
 
          }catch (error) {
           if(error.response.status===500){
@@ -109,7 +109,7 @@ const QuizView=()=>{
         <div className="QuizItem1">{it.quizId}</div>
         <div className="QuizItem2">{it.quizContent}</div> 
         <div >{it.subjectId} </div>
-        <Link to={`/admin/quiz/edit/${it.quizId}`} className="QuizItem3">수정하기</Link>
+        <Link to={`/admin/quiz/edit/${it.quizId}/${id}`} className="QuizItem3">수정하기</Link>
         <AdminButton text="삭제하기" onClick={()=>handleDelete(it.quizId)} className="QuizItem3"/>
         </div>
        )
