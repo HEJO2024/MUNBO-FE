@@ -6,7 +6,7 @@ import AdminButton from "../../components/AdminButton";
 const QuizEdit=()=>{
     const navigate=useNavigate();
     const {id,subjectId}=useParams();
-    const [keyword,setKeyword]=useState("");
+    const [keyword,setKeyword]=useState([]);
     const token=sessionStorage.getItem("token")
    const [data,setData]=useState({
         quizId:"",
@@ -46,7 +46,7 @@ const QuizEdit=()=>{
                 wrgAnsw_explanation: quizData.wrgAnsw_explanation,
             });
             setRound(quizRound);
-            setKeyword(keywordName);
+            setKeyword(keywordName.keywordName);
         }}catch (error) {
             if(error.response.status===500){
             alert(error.response.data.message);
@@ -144,7 +144,7 @@ return(
         <div className="WrgAnsw"><div className="WrgAnswText">해설</div>
         <textarea name="wrgAnsw_explanation" style={{ resize: 'none' }} value={data.wrgAnsw_explanation}onChange={handleChange} className="WrgAnswInput"></textarea> </div>
         <div className="SelectKeywordAll"><div className="KeywordText">키워드</div>
-        <div>{keyword}</div>
+        <div className="SelectKeywordItem">{keyword}</div>
       </div>
     </div>
 )
