@@ -6,7 +6,7 @@ import AdminButton from "../../components/AdminButton";
 const QuizEdit=()=>{
     const navigate=useNavigate();
     const {id,subjectId}=useParams();
-    const [keyword,setKeyword]=useState([]);
+    const [keyword,setKeyword]=useState("");
     const token=sessionStorage.getItem("token")
    const [data,setData]=useState({
         quizId:"",

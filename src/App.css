@@ -71,7 +71,7 @@
 }
 /*home*/
 .AdminEntire{
-  padding-left: 10%;
+  padding-left: 11%;
   padding-right: 10%;
 }
 .MainTitle{
@@ -606,10 +606,10 @@ text-align: center;
 /* round && subject create  */
 
 .RoundCreateBox{
-  height: 30px;
+  height: 40px;
   margin-left:70px;
   margin-top: 30px;
-  width: 250px;
+  width: 300px;
   border-radius: 10px;
 }
 .RoundCreateButton{
@@ -625,7 +625,7 @@ text-align: center;
 }
 .RoundCreateButtonList{
   display: flex;
-  margin-left: 200px;
+  margin-left: 250px;
   margin-top: 10px;
 }
 /*  keyword view      */

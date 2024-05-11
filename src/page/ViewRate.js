@@ -17,17 +17,21 @@ const ViewRate=()=>{
       countWrgTimes:117
     },
     {
-      subjectId:3,
+      subjectId:2,
       countSolveTimes:9665,
       countWrgTimes:1465
     },
     {
-      subjectId:4,
+      subjectId:3,
       countSolveTimes:87,
       countWrgTimes:55
      },
      {
       subjectId:4,
+      countSolveTimes:47,
+      countWrgTimes:15
+     },{
+      subjectId:5,
       countSolveTimes:47,
       countWrgTimes:15
      },
