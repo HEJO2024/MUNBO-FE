@@ -25,11 +25,12 @@ const ViewRate=()=>{
            }
            
          })
+         
          if(response){
           setRate(response.data.rateData);
        }
   
-       }catch (error) {
+      }catch (error) {
         if(error.response.status===500){
          alert(error.response.data.message);
         }
