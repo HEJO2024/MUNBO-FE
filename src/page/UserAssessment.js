@@ -1,76 +1,73 @@
 import AdminHeader from "../components/AdminHeader";
-import React, { useState } from "react";
-import Select from "react-select";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from 'react-router-dom';
+import { Pie } from 'react-chartjs-2'; 
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import axios from "axios";
+
+ChartJS.register(ArcElement, Tooltip, Legend);
+
 const UserAssessment = () => {
     const token = sessionStorage.getItem("token");
     const navigate = useNavigate();
-    const [assess, setAssess] = useState([
-        {
-            aiQuizId: 1,
-            countSolveTimes: 135,
-            countNotRecommendTimes: 117
-        },
-        {
-            aiQuizId: 2,
-            countSolveTimes: 85,
-            countNotRecommendTimes: 11
-        },
-        {
-            aiQuizId: 3,
-            countSolveTimes: 35,
-            countNotRecommendTimes: 7
-        }
-    ]);
-
-    const sortAssessment = (option) => {
-        let sortedAssess = [...assess];
-        if (option === 'id') {
-            sortedAssess.sort((a, b) => a.aiQuizId - b.aiQuizId);
-        } else if (option === 'ratio') {
-            sortedAssess.sort((a, b) => {
-                const ratioA = (a.countNotRecommendTimes / a.countSolveTimes);
-                const ratioB = (b.countNotRecommendTimes / b.countSolveTimes);
-                return ratioB - ratioA;
-            });
-        }
-        setAssess(sortedAssess);
+    const [assess, setAssess] = useState({ 
+        Allsolve: "",
+        unAssess: ""
+    });
+    useEffect(() => {
+        fetchassessment();
+     }, []); //가져온 사용자평가
+    
+     
+       const fetchassessment = async () => {     
+         try {
+             const response = await axios.get(`/admin/userAssessment`,{
+              headers:{
+               'Authorization':token
+             }
+             
+           })
+           if(response){
+            setAssess({
+        Allsolve:response.data.assessmentData.totalCount,
+        unAssess:response.data.assessmentData.count
+        })
+         }
+    
+         }catch (error) {
+          if(error.response.status===500){
+           alert(error.response.data.message);
+          }
+          else if(error.response.status===401 || error.response.status===403){
+            alert(error.response.data.message);
+            sessionStorage.removeItem("token");
+            navigate("/admin/login");
+           }
+         }  }// api로 사용자평가 받아오는 함수
+    const data = {
+        labels: [ '비추천','비추천받지 않음'],
+        datasets: [
+            {
+                label: '횟수',
+                data: [assess.unAssess,assess.Allsolve - assess.unAssess],
+                backgroundColor: ['#FF6384','#36A2EB'],
+                hoverOffset: 4,
+            },
+        ],
     };
 
-    // react-select에서 사용할 옵션 객체 배열 생성
-    const options = [
-        { value: 'id', label: 'ID 순서로 정렬' },
-        { value: 'ratio', label: '비율이 높은 순으로 정렬' }
-    ];
-
+    const options = {
+        maintainAspectRatio: false,
+        width: 100,
+        height: 50,
+    };
+    
     return (
         <div className="AdminEntire">
-            <AdminHeader />
-            <div className="UserText">사용자 평가 조회</div>
-            {/* react-select 컴포넌트 추가 */}
-            <Select
-                options={options}
-                onChange={(selectedOption) => sortAssessment(selectedOption.value)}
-                className="AssessSelect"
-                placeholder="정렬 옵션 선택"
-            />
-            <div className="AssessAll">
-                <div className="AssessMenuAll">
-                    <div className="AssessMenuItem1">생성 문제 ID</div><div className="AssessMenuItem2">풀이횟수</div>
-                    <div className="AssessMenuItem3">비추천 개수</div><div className="AssessMenuItem4">비추천 비율</div>
-                </div>
-                {assess && assess.map((it) => {
-                    const ratio = (it.countNotRecommendTimes / it.countSolveTimes) * 100;
-                    const formattedRatio = ratio.toFixed(2);
-                    return (
-                        <div className="AssessItemAll" key={it.aiQuizId}>
-                            <div className="AssessItem1">{it.aiQuizId}</div><div className="AssessItem2">{it.countSolveTimes}</div>
-                            <div className="AssessItem3">{it.countNotRecommendTimes}</div>
-                            <div className="AssessItem4">{formattedRatio}%</div>
-                        </div>
-                    )
-                })}
+            <AdminHeader/>
+            <div className="UserText">사용자 평가 통계</div>
+            <div className="PieChart">
+                <Pie data={data} options={options}/>
             </div>
         </div>
     )
