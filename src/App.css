@@ -12,7 +12,7 @@
 .Header{
   display: flex;
   border-bottom: 1px solid black;
-  width: 100%;
+  width: auto;
   height: 70px;
 }
 .HeaderItem1{
@@ -37,7 +37,6 @@
   padding-left:5%;
   padding-top: 20px;
   width: 100%;
-  font-size: 18px;
 
  }
  .HeaderItem4{
@@ -61,8 +60,6 @@
   font-size: 18px;
   padding-left: 5%;
   font-weight: bold;
-
-
  }
 .HeaderLogo{
   height: 40px;
@@ -97,7 +94,7 @@
 }
 .MainMenu{
   display: flex;
-  margin-left: 5%;
+  margin-left : 5%;
   margin-top: 3%;
 }
 
@@ -109,8 +106,8 @@
   flex-direction: column;
   align-items: center;
   cursor: pointer;
-  padding-left: 80px;
-  padding-top: 150px;
+  padding-left: 7%;
+  padding-top: 15%;
   
 }
 .item1 {
@@ -120,18 +117,18 @@
   flex-direction: column;
   align-items: center;
   cursor: pointer;
-  padding-left: 80px;
-  padding-top: 170px;
+  padding-left: 7%;
+  padding-top: 16.6%;
 }
 .item2 {
   text-decoration: none;
   color:black;
   display: flex;
-  flex-direction: column;
+  flex-direction: column; 
   align-items: center;
   cursor: pointer;
-  padding-left: 80px;
-  padding-top: 152px;
+  padding-left: 7%;
+  padding-top: 15.2%;
 }
 /* login */
 .AdminLogin{
