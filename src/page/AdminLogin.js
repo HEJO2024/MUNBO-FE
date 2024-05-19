@@ -13,8 +13,7 @@ const AdminLogin=()=>{
       const response = await axios.post(`/admin/users/login`, { 
          userId:id,
          passwd:password });
-         console.log(response)
-  
+      
       if (response.status === 200) {
          console.log('로그인 성공');
      

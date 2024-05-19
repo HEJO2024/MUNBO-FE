@@ -20,6 +20,9 @@ import QuizSubjectList from './page/Quiz/QuizSubjectList';
 import AnalyticsSelect from './page/AnalyticsSelect';
 import ViewRate from './page/ViewRate';
 import UserAssessment from './page/UserAssessment';
+import AiSelect from './page/AiSelect';
+import AiPromptEdit from './page/Ai/AiPromptEdit';
+import AiPrompt from './page/Ai/AiPrompt';
 function App() {
 
 
@@ -57,6 +60,10 @@ function App() {
   <Route path="analytics/select" element={<AnalyticsSelect/>}/>
   <Route path="viewrate" element={<ViewRate/>}/>
   <Route path="userassessment" element={<UserAssessment/>}/>
+
+  <Route path="ai/select" element={<AiSelect/>}/>
+  <Route path="ai/aiprompt" element={<AiPrompt/>}/>
+  <Route path="ai/aiprompt/edit" element={<AiPromptEdit/>}/>
 </Route>
 </Routes>
     </div>

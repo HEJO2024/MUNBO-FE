@@ -30,6 +30,8 @@ const Home=()=>{
             <div>키워드/과목/회차 관리</div></Link>
             <Link to="/admin/analytics/select" className="item"><img src={process.env.PUBLIC_URL + '/pi.png'} width = '80px' className="itemLogo" />
             <div>통계/평가</div></Link>
+            <Link to="/admin/ai/select" className="item3"><img src={process.env.PUBLIC_URL + '/ai.png'} width = '80px' className="itemLogo" />
+            <div>Ai관리</div></Link>
             <div className="item2"><img src={process.env.PUBLIC_URL + '/GptLogo.png'} width = '80px' className="itemLogo" />
             <div>Gpt4 토큰 사용량 조회</div></div>
         </div>
