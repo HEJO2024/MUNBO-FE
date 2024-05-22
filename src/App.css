@@ -859,3 +859,91 @@ height:50px;
   margin-left: 450px;
   margin-top: 20px;
 }
+/*    gpt4 token       */
+.TokenText{
+  margin-left:70px ;
+  margin-top: 100px;
+  font-size: 22px;
+}
+/* csv select*/
+.CsvSubjectList{
+  margin-top: 10%;
+  margin-left: 32%;
+}
+.CsvSubjectItem{
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  border: 1px solid black;
+  border-radius: 5px;
+  margin-top: 5%;
+  width: 37%;
+  height: 40px;
+  font-size:17px;
+  text-align: center;
+  background-color: rgba(25, 128, 99, 0.651);
+  color: white;
+
+}
+/*     csv       */
+
+.CsvAll{
+  padding-top: 20px;
+  padding-left: 70px;
+}
+.CsvList{
+  display: flex;
+  
+}
+.CsvMenuList{
+  display: flex;
+
+ height:50px;
+  
+}
+.CsvMenuItem1,.CsvMenuItem2,.CsvMenuItem3{
+
+  overflow: auto;
+   border: 1px solid black;
+   text-align: center;
+   font-size: 14px;
+   display: flex;      
+   align-items: center;
+   justify-content: center; 
+   background-color:#C8C8C8;
+}
+.CsvItem1,.CsvItem2,.CsvItem3{
+  
+  height:70px;
+ overflow: auto;
+  border: 1px solid black;
+  text-align: center;
+  font-size: 14px;
+  display: flex;      
+  align-items: center;
+  justify-content: center; 
+  padding-top:10px;
+  padding-bottom: 10px;
+  
+}
+.CsvItem1,.CsvMenuItem1{
+  width: 50px;
+}
+.CsvItem2,.CsvMenuItem2{
+  width:400px;
+}
+.CsvItem3,.CsvMenuItem3{
+  width:70px;
+}
+.CsvButton{
+  border: 1px solid black;
+  border-radius: 5px;
+  width:50px;
+  margin-left: 520px;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  background-color: black;
+  color: white;
+}

@@ -37,7 +37,7 @@ const AdminHeader=()=>{
      <Link to="/admin/content/select" className="HeaderItem4">키워드/과목/회차</Link>
      <Link to="/admin/analytics/select" className="HeaderItem4">통계/평가</Link>
      <Link to="/admin/ai/select" className="HeaderItem4">Ai관리</Link>
-     <div className="HeaderItem4">토큰사용량</div>
+     <Link to="/admin/token" className="HeaderItem4">토큰사용량</Link>
      <div onClick={handleLogoutClick} className="HeaderItem5">로그아웃</div>
      <div className="HeaderItem6">관리자</div> </div>}
     </div>

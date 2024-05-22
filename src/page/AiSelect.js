@@ -12,9 +12,9 @@ return(
         <Link to="/admin/ai/aiprompt" className="ContentLink">관리하러가기</Link>
     </div>
     <div className="AnalyticsBox">
-    <div className="AiSelectMain2">?</div>
-    <div className="ContentDetail">?</div>
-    <Link to="" className="ContentLink">관리하러가기</Link>
+    <div className="AiSelectMain2">기출문제 csv 변환</div>
+    <div className="ContentDetail">선택한 기출문제를 csv 파일로 변환 할 수 있다.</div>
+    <Link to="/admin/ai/csv/subject" className="ContentLink">관리하러가기</Link>
     </div>
     </div>
     </div>

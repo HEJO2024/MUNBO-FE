@@ -23,6 +23,9 @@ import UserAssessment from './page/UserAssessment';
 import AiSelect from './page/AiSelect';
 import AiPromptEdit from './page/Ai/AiPromptEdit';
 import AiPrompt from './page/Ai/AiPrompt';
+import GptToken from './page/GptToken';
+import AiCsvSubject from './page/Ai/AiCsvSubject';
+import AiCsvSelect from './page/Ai/AiCsvSelect';
 function App() {
 
 
@@ -64,6 +67,10 @@ function App() {
   <Route path="ai/select" element={<AiSelect/>}/>
   <Route path="ai/aiprompt" element={<AiPrompt/>}/>
   <Route path="ai/aiprompt/edit" element={<AiPromptEdit/>}/>
+  <Route path="ai/csv/subject" element={<AiCsvSubject/>}/>
+  <Route path="ai/csv/:id" element={<AiCsvSelect/>}/>
+
+  <Route path="token"element={<GptToken/>}/>
 </Route>
 </Routes>
     </div>
