@@ -107,7 +107,7 @@ const handleDelete=async(userId)=>{
             <div className="UserMenuItem1">ID</div> <div className="UserMenuItem2">비밀번호</div>
              <div className="UserMenuItem3">닉네임</div> <div className="UserMenuItem4">이메일</div> 
              <div className="UserMenuItem5">식별코드</div> 
-             <div className="UserMenuItem5">수정하기</div> <div className="UserMenuItem5">삭제하기</div>
+             <div className="UserMenuItem6">수정하기</div> <div className="UserMenuItem6">삭제하기</div>
         </div>
         <div>
         {data&&data.map((it)=>{

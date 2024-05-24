@@ -210,7 +210,7 @@
   
   
 }
-.UserMenuItem1,.UserMenuItem2,.UserMenuItem3,.UserMenuItem4,.UserMenuItem5{
+.UserMenuItem1,.UserMenuItem2,.UserMenuItem3,.UserMenuItem4,.UserMenuItem5,.UserMenuItem6{
   height:auto;
   min-height:50px;
  overflow: auto;
@@ -224,19 +224,22 @@
   background-color:#C8C8C8;
 }
 .UserItem1,.UserMenuItem1{
-  width:60px;
+  width:80px;
 }
 .UserItem2,.UserMenuItem2{
-  width:70px;
+  width:100px;
 }
 .UserItem3,.UserMenuItem3{
   width:70px;
 }
 .UserItem4,.UserMenuItem4{
-  width:150px;
+  width:170px;
 }
 .UserItem5,.UserMenuItem5{
-  width:60px;
+  width:40px;
+}
+.UserMenuItem6{
+  width: 60px;
 }
 .UserItem6{
   width:60px;
@@ -726,6 +729,7 @@ text-align: center;
   margin-top: 30px;
   width: 350px;
   border-radius: 10px;
+  font-size: 15px;
 }
 .KeywordCreateBox2{
   height: 200px;
@@ -734,6 +738,7 @@ text-align: center;
   border: 2px solid black;
   width: 350px;
   border-radius: 10px;
+  font-size: 15px;
 }
 .KeywordCreateButton{
   border: 1px solid black;
@@ -842,6 +847,7 @@ height:50px;
   width: 500px;
   border-radius: 10px;
   overflow: auto;
+  font-weight: bold;
 }
 .AiPromptButton{
   border: 1px solid black;
