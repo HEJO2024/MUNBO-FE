@@ -11,10 +11,10 @@ const UserAssessment = () => {
     const token = sessionStorage.getItem("token");
     const navigate = useNavigate();
     const [assess, setAssess] = useState({ 
-        Allsolve: "",
-        unAssess: ""
+        Allsolve: 200,
+        unAssess: 20
     });
-    useEffect(() => {
+   /* useEffect(() => {
         fetchassessment();
      }, []); //가져온 사용자평가
     
@@ -43,7 +43,7 @@ const UserAssessment = () => {
             sessionStorage.removeItem("token");
             navigate("/admin/login");
            }
-         }  }// api로 사용자평가 받아오는 함수
+         }  }// api로 사용자평가 받아오는 함수*/
     const data = {
         labels: [ '비추천','비추천받지 않음'],
         datasets: [
@@ -67,7 +67,7 @@ const UserAssessment = () => {
             <AdminHeader/>
             <div className="UserText">사용자 평가 통계</div>
             <div className="PieChart">
-                <Pie data={data} options={options}/>
+                <Pie data={data} options={options}/>  
             </div>
         </div>
     )
